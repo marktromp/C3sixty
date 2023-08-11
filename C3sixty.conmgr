@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="setw2k12itadev.C3sixty"
+  DTS:DTSID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=setw2k12itadev;Initial Catalog=C3sixty;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-C360_B2B.Integration-{3FAEF594-14DF-44FE-8577-79761F1D42A3}setw2k12itadev.C3sixty;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
