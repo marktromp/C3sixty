@@ -1,0 +1,47 @@
+select
+   (case
+      when c.account_category = 1  then 'B2B'
+      when c.account_category = 2 then 'B2C'
+      when c.account_category = 3 then 'B2G'
+      else 'Other'
+    end) Customer_Profile,
+   s.subscr_no,
+   c.account_no Billing_Account_No,
+   trunc(s.service_active_dt) Service_Active_Date, 
+   trunc(s.service_inactive_dt) Service_Inactive_Date,
+   subqry2.External_ID, 
+   subqry1.Service_Name_ID,
+   subqry1.Service_Name,
+   '' Equipment_Brand,
+   '' Equipment_Model
+from
+   service s,
+   cmf c, 
+   (
+     SELECT s.SUBSCR_NO, s.SUBSCR_NO_RESETS, s.EMF_CONFIG_ID Service_Name_ID, eciv.DISPLAY_VALUE Service_Name
+     FROM 
+       SERVICE s, EMF_CONFIG_ID_VALUES eciv
+     WHERE
+       s.EMF_CONFIG_ID  = eciv.EMF_CONFIG_ID
+       AND eciv.LANGUAGE_CODE=1             
+     ORDER BY s.SUBSCR_NO, s.SUBSCR_NO_RESETS
+   ) subqry1,         
+  (
+    select s.subscr_no, s.subscr_no_resets, ciemv.external_id, ciemv.external_id_type 
+    from
+      service s, service_key sk, customer_id_equip_map_view ciemv
+    where
+      s.subscr_no=sk.subscr_no
+      and s.subscr_no_resets=sk.subscr_no_resets
+      and sk.display_ciem_view_id=ciemv.view_id
+    order by 1, 2 
+  ) subqry2 
+where
+  s.parent_account_no=c.account_no
+  and s.subscr_no=subqry1.subscr_no(+)
+  and s.subscr_no_resets=subqry1.subscr_no_resets(+)
+  and s.subscr_no=subqry2.subscr_no(+)
+  and s.subscr_no_resets=subqry2.subscr_no_resets(+)
+  and (s.service_inactive_dt is null or (trunc(s.service_inactive_dt) >= trunc(sysdate) and trunc(s.service_active_dt) <= trunc(sysdate)))
+  and (c.date_inactive is null or (trunc(c.date_inactive) >= trunc(sysdate) and trunc(c.date_active) <= trunc(sysdate)))
+  and c.account_category in (1, 2, 3)

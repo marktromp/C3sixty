@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RAPRD.REPORTINGSERVICES"
+  DTS:DTSID="{1D79AA57-AFE3-4103-A3B6-E577B24F68D4}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=RAPRD;User ID=REPORTINGSERVICES;Provider=MSDAORA.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG4WdLQ2pXkS43nX5icN+3wAAAAACAAAAAAADZgAAwAAAABAAAAABUd15mb07ojPUJyn3kW3DAAAAAASAAACgAAAAEAAAAI3V0AsHhXFvdnHe3Yk/pWh4AAAA8RvY6HY4BgSlyNZETAS5NMBVUt8L2sJOAKXzE2gg/b5H3zqn4bvhtGCZUigImpl2g+eVQLSgHSWlXs2d2yEe7RX8GWeBCdMp2QIz8EePYFNof0MAVAqby9A9iViHs2auhUlX5AHYdYoSFZfWlusdXAmJ06PLl/YrFAAAAHrc32j6W72Y6M1oUQR68fVBzVIk</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
