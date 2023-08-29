@@ -11,20 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="B2B 02 Service"
   DTS:PackageType="5"
-  DTS:VersionBuild="104"
-  DTS:VersionGUID="{DC670199-E9F3-476B-ABF7-657FD293C7F5}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{14C7FFE9-A998-4C34-8207-0FCC03ED66A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\B2C Service"
+      DTS:refId="Package\B2B Service"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{467FB26C-EEED-4037-867D-543E030A5CC4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="B2C Service"
+      DTS:ObjectName="B2B Service"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -32,7 +32,7 @@
           version="1">
           <components>
             <component
-              refId="Package\B2C Service\curated B2B SERVICE"
+              refId="Package\B2B Service\curated B2B SERVICE"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -89,7 +89,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\B2C Service\curated B2B SERVICE.Connections[OleDbConnection]"
+                  refId="Package\B2B Service\curated B2B SERVICE.Connections[OleDbConnection]"
                   connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
                   connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
                   description="The OLE DB runtime connection used to access the database."
@@ -97,162 +97,180 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]"
+                  refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ACCOUNT_ID]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ACCOUNT_ID]"
                       cachedDataType="i4"
                       cachedName="ACCOUNT_ID"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_TYPE]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_TYPE]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="240"
                       cachedName="SERVICE_TYPE"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_TYPE]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_TYPE]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_ID]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="144"
                       cachedName="SERVICE_ID"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ID]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_ID]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_ID]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_KEY]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_KEY]"
                       cachedDataType="numeric"
                       cachedName="SERVICE_KEY"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_KEY]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_KEY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ADDRESS_1]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ADDRESS_1]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="225"
                       cachedName="ADDRESS_1"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS_1]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS_1]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS_1]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ADDRESS_1]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[CITY]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[CITY]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="105"
                       cachedName="CITY"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[CITY]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ACTIVE_DT]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[ACTIVE_DT]"
                       cachedDataType="dbTimeStamp"
                       cachedName="ACTIVE_DT"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVE_DT]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[INACTIVE_DT]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[INACTIVE_DT]"
                       cachedDataType="dbTimeStamp"
                       cachedName="INACTIVE_DT"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_BRAND]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="EQUIPMENT_BRAND"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]" />
                     <inputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[EQUIPMENT_MODEL]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="350"
                       cachedName="EQUIPMENT_MODEL"
-                      externalMetadataColumnId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]" />
+                    <inputColumn
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_GROUP"
+                      externalMetadataColumnId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
                       dataType="i4"
                       name="ACCOUNT_ID" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_TYPE]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_TYPE]"
                       codePage="1252"
                       dataType="str"
                       length="240"
                       name="SERVICE_TYPE" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ID]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_ID]"
                       codePage="1252"
                       dataType="str"
                       length="144"
                       name="SERVICE_ID" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_KEY]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_KEY]"
                       dataType="numeric"
                       name="SERVICE_KEY"
                       precision="10" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS_1]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ADDRESS_1]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="ADDRESS_1" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[CITY]"
                       codePage="1252"
                       dataType="str"
                       length="105"
                       name="CITY" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVE_DT]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="ACTIVE_DT" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="INACTIVE_DT" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_BRAND]"
                       codePage="1252"
                       dataType="str"
                       length="150"
                       name="EQUIPMENT_BRAND" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
                       codePage="1252"
                       dataType="str"
                       length="350"
                       name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\B2C Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\B2B Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\B2C Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\B2B Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\B2C Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\B2B Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\B2C Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\B2B Service\curated B2B SERVICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -261,11 +279,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\B2C Service\OLE DB Source"
+              refId="Package\B2B Service\staging B2B SERVICE 05"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="staging B2B SERVICE 05"
               usesDispositions="true"
               version="7">
               <properties>
@@ -310,7 +328,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\B2C Service\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\B2B Service\staging B2B SERVICE 05.Connections[OleDbConnection]"
                   connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
                   connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
                   description="The OLE DB runtime connection used to access the database."
@@ -318,248 +336,272 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
                       name="ACCOUNT_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_TYPE]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_TYPE]"
                       length="240"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_TYPE]"
                       name="SERVICE_TYPE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_ID]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ID]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ID]"
                       length="144"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_ID]"
                       name="SERVICE_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_KEY]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_KEY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_KEY]"
                       name="SERVICE_KEY"
                       precision="10"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS_1]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ADDRESS_1]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS_1]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS_1]"
                       length="225"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ADDRESS_1]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ADDRESS_1]"
                       name="ADDRESS_1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[CITY]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
                       length="105"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[CITY]"
                       name="CITY"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE_DT]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[ACTIVE_DT]"
                       name="ACTIVE_DT"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE_DT]"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]"
                       name="INACTIVE_DT"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
                       length="150"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_BRAND]"
                       name="EQUIPMENT_BRAND"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
                       length="350"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[EQUIPMENT_MODEL]"
                       name="EQUIPMENT_MODEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      length="240"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
                       dataType="i4"
                       name="ACCOUNT_ID" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_TYPE]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_TYPE]"
                       codePage="1252"
                       dataType="str"
                       length="240"
                       name="SERVICE_TYPE" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_ID]"
                       codePage="1252"
                       dataType="str"
                       length="144"
                       name="SERVICE_ID" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_KEY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_KEY]"
                       dataType="numeric"
                       name="SERVICE_KEY"
                       precision="10" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS_1]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ADDRESS_1]"
                       codePage="1252"
                       dataType="str"
                       length="225"
                       name="ADDRESS_1" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
                       codePage="1252"
                       dataType="str"
                       length="105"
                       name="CITY" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="ACTIVE_DT" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="INACTIVE_DT" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_BRAND]"
                       codePage="1252"
                       dataType="str"
                       length="150"
                       name="EQUIPMENT_BRAND" />
                     <externalMetadataColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[EQUIPMENT_MODEL]"
                       codePage="1252"
                       dataType="str"
                       length="350"
                       name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
                       dataType="i4"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
                       name="ACCOUNT_ID" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_TYPE]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_TYPE]"
                       codePage="1252"
                       dataType="str"
                       length="240"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_TYPE]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_TYPE]"
                       name="SERVICE_TYPE" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_ID]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_ID]"
                       codePage="1252"
                       dataType="str"
                       length="144"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_ID]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_ID]"
                       name="SERVICE_ID" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_KEY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_KEY]"
                       dataType="numeric"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_KEY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_KEY]"
                       name="SERVICE_KEY"
                       precision="10" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESS_1]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ADDRESS_1]"
                       codePage="1252"
                       dataType="str"
                       length="225"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ADDRESS_1]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ADDRESS_1]"
                       name="ADDRESS_1" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[CITY]"
                       codePage="1252"
                       dataType="str"
                       length="105"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[CITY]"
                       name="CITY" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ACTIVE_DT]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ACTIVE_DT]"
                       name="ACTIVE_DT" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
                       name="INACTIVE_DT" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
                       codePage="1252"
                       dataType="str"
                       length="150"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_BRAND]"
                       name="EQUIPMENT_BRAND" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
                       codePage="1252"
                       dataType="str"
                       length="350"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[EQUIPMENT_MODEL]"
                       name="EQUIPMENT_MODEL" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP" />
+                    <outputColumn
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -570,10 +612,10 @@
           </components>
           <paths>
             <path
-              refId="Package\B2C Service.Paths[OLE DB Source Output]"
-              endId="Package\B2C Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]"
+              refId="Package\B2B Service.Paths[OLE DB Source Output]"
+              endId="Package\B2B Service\curated B2B SERVICE.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\B2C Service\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\B2B Service\staging B2B SERVICE 05.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -617,12 +659,22 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  V.ACCOUNT_NO, V.ADDRESS_1, V.CITY, V.SERVICE_TYPE, V.SERVICE_ID, V.SUBSCR_NO, S.SERVICE_ACTIVE_DT, S.SERVICE_INACTIVE_DT
-FROM    ARBOR.SETAR_KAWETA_TZ_SERVICEINFO V,
-        SERVICE S
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  S.ACCOUNT_NO, S.ADDRESS_1, S.CITY, S.SERVICE_TYPE, S.SERVICE_ID, S.SUBSCR_NO, S1.SERVICE_ACTIVE_DT, S1.SERVICE_INACTIVE_DT,EMF_BV.DISPLAY_VALUE
+FROM    ARBOR.SETAR_KAWETA_TZ_SERVICEINFO S,
+        emf_config_id_values EMF_CIV,
+        EMF_CONFIGURATION EMF_C,
+        ARBOR.JNL_EMF_BOOK_values EMF_BV,
+        SERVICE S1
 WHERE   1=1   
-AND     V.CATEGORY = 'BUSINESS'
-AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
+--AND     S.account_no = 10139257
+AND     S.CATEGORY = 'BUSINESS'
+AND     S.SUBSCR_NO = S1.SUBSCR_NO
+AND     S.SERVICE_TYPE = emf_civ.display_value
+AND     EMF_CIV.LANGUAGE_CODE = 1
+AND     EMF_CIV.EMF_CONFIG_ID = EMF_C.EMF_CONFIG_ID
+AND     EMF_C.EMF_BOOK_ID = EMF_BV.EMF_BOOK_ID
+AND     EMF_BV.LANGUAGE_CODE = 1
+AND     S.SUBSCR_NO = S1.SUBSCR_NO</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -740,6 +792,17 @@ AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
                       lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DT]"
                       name="SERVICE_INACTIVE_DT"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].ExternalColumns[DISPLAY_VALUE]"
+                      length="240"
+                      lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -785,6 +848,12 @@ AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
                       refId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="SERVICE_INACTIVE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].ExternalColumns[DISPLAY_VALUE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="DISPLAY_VALUE" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -842,6 +911,13 @@ AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
                       dataType="dbTimeStamp"
                       lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Error Output].Columns[SERVICE_INACTIVE_DT]"
                       name="SERVICE_INACTIVE_DT" />
+                    <outputColumn
+                      refId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Error Output].Columns[DISPLAY_VALUE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Error Output].Columns[DISPLAY_VALUE]"
+                      name="DISPLAY_VALUE" />
                     <outputColumn
                       refId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -989,6 +1065,14 @@ AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
                       cachedName="SERVICE_INACTIVE_DT"
                       externalMetadataColumnId="Package\Extract Kenan Services\raw B2B_SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DT]"
                       lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].Columns[SERVICE_INACTIVE_DT]" />
+                    <inputColumn
+                      refId="Package\Extract Kenan Services\raw B2B_SERVICE.Inputs[OLE DB Destination Input].Columns[SERVICE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_GROUP"
+                      externalMetadataColumnId="Package\Extract Kenan Services\raw B2B_SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      lineageId="Package\Extract Kenan Services\ARBOR SETAR_KAWETA_TZ_SERVICEINFO.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1034,6 +1118,12 @@ AND     V.SUBSCR_NO = S.SUBSCR_NO</property>
                       refId="Package\Extract Kenan Services\raw B2B_SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="SERVICE_INACTIVE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Kenan Services\raw B2B_SERVICE.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1527,7 +1617,8 @@ and a.identifier=d.msisdn</property>
 		S.ADDRESS_1,
 		S.CITY,
 		S.SERVICE_ACTIVE_DT AS ACTIVE_DT,
-		S.SERVICE_INACTIVE_DT AS INACTIVE_DT
+		S.SERVICE_INACTIVE_DT AS INACTIVE_DT,
+S.SERVICE_GROUP
 FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                        [curated].[B2B_ACCOUNT] AS A ON S.ACCOUNT_NO = A.ACCOUNT_ID</property>
                 <property
@@ -1646,6 +1737,17 @@ FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                       lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]"
                       name="INACTIVE_DT"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      length="240"
+                      lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1690,6 +1792,12 @@ FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                       refId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="INACTIVE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1746,6 +1854,13 @@ FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                       dataType="dbTimeStamp"
                       lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
                       name="INACTIVE_DT" />
+                    <outputColumn
+                      refId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP" />
                     <outputColumn
                       refId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1892,6 +2007,14 @@ FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                       cachedName="INACTIVE_DT"
                       externalMetadataColumnId="Package\staging B2B_SERVICE_00\staging B2B_SERVICE_00.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
                       lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].Columns[INACTIVE_DT]" />
+                    <inputColumn
+                      refId="Package\staging B2B_SERVICE_00\staging B2B_SERVICE_00.Inputs[OLE DB Destination Input].Columns[SERVICE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_GROUP"
+                      externalMetadataColumnId="Package\staging B2B_SERVICE_00\staging B2B_SERVICE_00.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      lineageId="Package\staging B2B_SERVICE_00\B2B Services 01.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1936,6 +2059,12 @@ FROM           [raw].[B2B_SERVICE] AS S INNER JOIN
                       refId="Package\staging B2B_SERVICE_00\staging B2B_SERVICE_00.Inputs[OLE DB Destination Input].ExternalColumns[INACTIVE_DT]"
                       dataType="dbTimeStamp"
                       name="INACTIVE_DT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_SERVICE_00\staging B2B_SERVICE_00.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2157,6 +2286,17 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                       lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODEL]"
                       name="MODEL"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      length="240"
+                      lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2229,6 +2369,12 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                       dataType="numeric"
                       name="SUBSCR_NO"
                       precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2285,6 +2431,13 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                       dataType="dbTimeStamp"
                       lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INACTIVE_DT]"
                       name="INACTIVE_DT" />
+                    <outputColumn
+                      refId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SERVICE_GROUP]"
+                      name="SERVICE_GROUP" />
                     <outputColumn
                       refId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MANUFACTURER]"
                       codePage="1252"
@@ -2461,6 +2614,14 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                       cachedName="MODEL"
                       externalMetadataColumnId="Package\staging B2B_SERVICE_05\staging B2B_SERVICE_05.Inputs[OLE DB Destination Input].ExternalColumns[EQUIPMENT_MODEL]"
                       lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODEL]" />
+                    <inputColumn
+                      refId="Package\staging B2B_SERVICE_05\staging B2B_SERVICE_05.Inputs[OLE DB Destination Input].Columns[SERVICE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="SERVICE_GROUP"
+                      externalMetadataColumnId="Package\staging B2B_SERVICE_05\staging B2B_SERVICE_05.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      lineageId="Package\staging B2B_SERVICE_05\OLE DB Source.Outputs[OLE DB Source Output].Columns[SERVICE_GROUP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2517,6 +2678,12 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                       dataType="str"
                       length="350"
                       name="EQUIPMENT_MODEL" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_SERVICE_05\staging B2B_SERVICE_05.Inputs[OLE DB Destination Input].ExternalColumns[SERVICE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="SERVICE_GROUP" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2570,7 +2737,7 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3FAEF594-14DF-44FE-8577-79761F1D42A3}"
-          SQLTask:SqlStatementSource="truncate table raw.B2B_SERVICE&#xA;&#xA;truncate table staging.B2B_SERVICE_00&#xA;truncate table staging.B2B_SERVICE_05&#xA;&#xA;truncate table curated.B2B_SERVICE&#xA;&#xA;truncate table raw.TAC&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table raw.B2B_SERVICE&#xA;truncate table raw.TAC&#xA;&#xA;truncate table staging.B2B_SERVICE_00&#xA;truncate table staging.B2B_SERVICE_05&#xA;&#xA;truncate table curated.B2B_SERVICE&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2614,7 +2781,7 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
       DTS:From="Package\staging B2B_SERVICE_05"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\B2C Service" />
+      DTS:To="Package\B2B Service" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2629,13 +2796,13 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="140,42"
-          Id="Package\B2C Service"
-          TopLeft="740,468" />
+          Size="139,42"
+          Id="Package\B2B Service"
+          TopLeft="949,517" />
         <NodeLayout
           Size="186,42"
           Id="Package\Extract Kenan Services"
-          TopLeft="243,172" />
+          TopLeft="60,166" />
         <NodeLayout
           Size="138,42"
           Id="Package\Extract TAC"
@@ -2645,23 +2812,39 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
           Id="Package\staging B2B_SERVICE_00"
           TopLeft="334,350" />
         <NodeLayout
+          Size="211,42"
+          Id="Package\staging B2B_SERVICE_05"
+          TopLeft="358,522" />
+        <NodeLayout
           Size="199,42"
           Id="Package\Truncate Staging Tables"
-          TopLeft="236,56" />
+          TopLeft="45,55" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="335.75,98">
+          TopLeft="144.5,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,74"
+              EndConnector="8.5,69"
               Start="0,0"
-              End="0,66.5">
+              End="8.5,61.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.5" />
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="4,34.5" />
+                  <mssgle:LineSegment
+                    End="4.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,34.5"
+                    Point2="8.5,34.5"
+                    Point3="8.5,38.5" />
+                  <mssgle:LineSegment
+                    End="8.5,61.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2672,18 +2855,30 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="429,195">
+          TopLeft="246,187">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="193,0"
+              EndConnector="376,10"
               Start="0,0"
-              End="185.5,0">
+              End="368.5,10">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="185.5,0" />
+                    End="184,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184,0"
+                    Point2="188,0"
+                    Point3="188,4" />
+                  <mssgle:LineSegment
+                    End="188,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="188,6"
+                    Point2="188,10"
+                    Point3="192,10" />
+                  <mssgle:LineSegment
+                    End="368.5,10" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2726,36 +2921,32 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="211,42"
-          Id="Package\staging B2B_SERVICE_05"
-          TopLeft="183,478" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="439.5,392">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-151,86"
+              EndConnector="24,130"
               Start="0,0"
-              End="-151,78.5">
+              End="24,122.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39" />
+                    End="0,61" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39"
-                    Point2="0,43"
-                    Point3="-4,43" />
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="4,65" />
                   <mssgle:LineSegment
-                    End="-147,43" />
+                    End="20,65" />
                   <mssgle:CubicBezierSegment
-                    Point1="-147,43"
-                    Point2="-151,43"
-                    Point3="-151,47" />
+                    Point1="20,65"
+                    Point2="24,65"
+                    Point3="24,69" />
                   <mssgle:LineSegment
-                    End="-151,78.5" />
+                    End="24,122.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2766,30 +2957,18 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="394,499">
+          TopLeft="569,540.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="346,-10"
+              EndConnector="380,0"
               Start="0,0"
-              End="338.5,-10">
+              End="372.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="169,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169,0"
-                    Point2="173,0"
-                    Point3="173,-4" />
-                  <mssgle:LineSegment
-                    End="173,-6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="173,-6"
-                    Point2="173,-10"
-                    Point3="177,-10" />
-                  <mssgle:LineSegment
-                    End="338.5,-10" />
+                    End="372.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2802,27 +2981,27 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\B2C Service">
+    design-time-name="Package\B2B Service">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157,42"
-          Id="Package\B2C Service\OLE DB Source"
+          Size="205,42"
+          Id="Package\B2B Service\staging B2B SERVICE 05"
           TopLeft="400,141" />
         <NodeLayout
           Size="191,42"
-          Id="Package\B2C Service\curated B2B SERVICE"
+          Id="Package\B2B Service\curated B2B SERVICE"
           TopLeft="487,342" />
         <EdgeLayout
-          Id="Package\B2C Service.Paths[OLE DB Source Output]"
-          TopLeft="478.5,183">
+          Id="Package\B2B Service.Paths[OLE DB Source Output]"
+          TopLeft="502.5,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="104,159"
+              EndConnector="80,159"
               Start="0,0"
-              End="104,151.5">
+              End="80,151.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2833,13 +3012,13 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
                     Point2="0,79.5"
                     Point3="4,79.5" />
                   <mssgle:LineSegment
-                    End="100,79.5" />
+                    End="76,79.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="100,79.5"
-                    Point2="104,79.5"
-                    Point3="104,83.5" />
+                    Point1="76,79.5"
+                    Point2="80,79.5"
+                    Point3="80,83.5" />
                   <mssgle:LineSegment
-                    End="104,151.5" />
+                    End="80,151.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2851,6 +3030,32 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\B2B Service\curated B2B SERVICE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\B2B Service\staging B2B SERVICE 05">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Extract Kenan Services">
     <LayoutInfo>
@@ -2926,15 +3131,15 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
     design-time-name="Package\Extract TAC">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Extract TAC\OLE DB Source"
-          TopLeft="701,85" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="122,42"
           Id="Package\Extract TAC\raw TAC"
           TopLeft="774,324" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Extract TAC\OLE DB Source"
+          TopLeft="701,85" />
         <EdgeLayout
           Id="Package\Extract TAC.Paths[OLE DB Source Output]"
           TopLeft="779.5,127">
@@ -2966,7 +3171,9 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2977,6 +3184,19 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract TAC\raw TAC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3051,19 +3271,6 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract TAC\raw TAC">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\staging B2B_SERVICE_05">
     <LayoutInfo>
@@ -3124,32 +3331,6 @@ AND		S.SERVICE_KEY = T.SUBSCR_NO</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\staging B2B_SERVICE_05\staging B2B_SERVICE_05">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\B2C Service\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\B2C Service\curated B2B SERVICE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
