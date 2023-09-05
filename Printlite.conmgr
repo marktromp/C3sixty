@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="set12dbita.BP_INVOICEdb"
+  DTS:DTSID="{F4D0858F-2229-43F8-A5D1-AA05713768BA}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=set12dbita;Initial Catalog=BP_INVOICEdb;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-C360_B2B.Integration-{F4D0858F-2229-43F8-A5D1-AA05713768BA}set12dbita.BP_INVOICEdb;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
