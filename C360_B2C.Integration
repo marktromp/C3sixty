@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">AG-ITA-MTROMP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG4WdLQ2pXkS43nX5icN+3wAAAAACAAAAAAADZgAAwAAAABAAAAC6ustOila7441kox+U8aZyAAAAAASAAACgAAAAEAAAAPZHn6yLaXZg2MVXbrE8izyIAAAAGlL14BNu8tX24GOWsL9VDlUO4ZdGgk5m47F8thIDpIxvA5Nm/HQ+6TLFCYnhD0Fa0N14JmhB2p+fuYLCVzRpvuvWYfgEvU85CiruJlU5uRCH0oP/Ta++qMAmhar9Mrk7Fd8TNE7iXMJCxKTB6KWk+PCBN5d505LGIOE9S4vePTLXx9wlRu88mhQAAACXk7a26iP3gDJMFSECazRFAS0eUQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfVkdPJOPpEag22JX6agzrwAAAAACAAAAAAADZgAAwAAAABAAAABT6ffNddqxiq7AxVgM32TfAAAAAASAAACgAAAAEAAAABsD8uEWIlI1jNTYBqeJzueIAAAATerRF/wPqb9f65gvQiw6DrYHERWUv0OXPWGXq58cEYzNEfwgRBFZCKRMlxh41S7LFhI0TDHL852qC/P+atQRPmUO4tkrR2720ZUd3dJlxYs/B3ZuuhaCYIXlUXIQpotAW7Z4cN9VfqVFdojWkIHvcSA3suyBjmpWbaX7exwU3MTWSVQ3FTJv4BQAAAARijTVR1bgdjdaUunRGGap3432iA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="B2B 01 Account.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="MobileTAC.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="B2B 03 Invoice.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="B2B 04 Transaction.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="KenanSG.conmgr" />
@@ -1289,10 +1290,27 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{ED26A4DA-A053-482D-BDAC-DD6D497C8436}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B09CCB8C-BCD0-45C6-9EEE-918CFF4973D8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="B2B 04 Transaction.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{FF5BE08A-0508-4E12-B951-5F7EF9A32FC3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ED3CCB3D-1197-42A9-A0E0-4A7CD1C4BD57}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -1,0 +1,2076 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/29/2023 11:15:40 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AG-ITA-MTROMP"
+  DTS:CreatorName="SETARNV\mark.tromp"
+  DTS:DTSID="{C59FC51D-91C6-4829-9332-223FD16F4767}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="B2X 04 Transaction"
+  DTS:PackageType="5"
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{86612047-6A07-4502-86F0-858A5A21F63D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{85C47D43-6062-465D-BD87-61437FB6EA4A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varInvoiceMonths">
+      <DTS:VariableValue
+        DTS:DataType="3">9</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\curated B2B_INVOICE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{248C81BE-A17A-4D79-AFE7-79A22ABB3E9C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="curated B2B_INVOICE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="curated B2B_TRANSACTION"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[curated].[B2B_TRANSACTION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[ACCOUNT_ID]"
+                      cachedDataType="i4"
+                      cachedName="ACCOUNT_ID"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]" />
+                    <inputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[INVOICE_ID]"
+                      cachedDataType="i4"
+                      cachedName="INVOICE_ID"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_ID]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[INVOICE_ID]" />
+                    <inputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRANSACTION_DATE"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]" />
+                    <inputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_AMOUNT]"
+                      cachedDataType="r8"
+                      cachedName="TRANSACTION_AMOUNT"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]" />
+                    <inputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="TRANSACTION_LOCATION"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      dataType="numeric"
+                      name="ACCOUNT_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_ID]"
+                      dataType="numeric"
+                      name="INVOICE_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="staging B2B_TRANSACTION_05"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_TRANSACTION_05]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[ACCOUNT_ID]"
+                      name="ACCOUNT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[INVOICE_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_ID]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[INVOICE_ID]"
+                      name="INVOICE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      length="240"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_ID]"
+                      dataType="numeric"
+                      name="ACCOUNT_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_ID]"
+                      dataType="numeric"
+                      name="INVOICE_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
+                      dataType="numeric"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_ID]"
+                      name="ACCOUNT_ID"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[INVOICE_ID]"
+                      dataType="numeric"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[INVOICE_ID]"
+                      name="INVOICE_ID"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\curated B2B_INVOICE.Paths[OLE DB Source Output]"
+              endId="Package\curated B2B_INVOICE\curated B2B_TRANSACTION.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract Transaction"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D8EE012E-71F3-448C-8DDF-E9CDC4BE8521}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract Transaction"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extract Transaction\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  DISTINCT 
+            ADJ.account_no,
+            ADJ.orig_bill_ref_no INVOICE,
+            ADJ.transact_date TRANS_DATE,
+            (((total_amt + federal_tax + state_tax + county_tax + city_tax + other_tax + discount_amt)* ADJ_TRANS_DESCR.trans_sign)* -1)/100 AS AMOUNT,
+            DESCRIPTIONS.description_text
+FROM  ADJ, ADJ_TRANS_DESCR, DESCRIPTIONS
+WHERE  DESCRIPTIONS.language_code = 1
+and    ADJ.transact_date &gt;= ADD_MONTHS(SYSDATE, -12)
+--ADD_MONTHS( sysdate, -36) 
+AND    ADJ.adj_trans_code = ADJ_TRANS_DESCR.adj_trans_code
+AND    DESCRIPTIONS.description_code = ADJ_TRANS_DESCR.description_code
+AND    ADJ.request_status + 0 = 1
+AND    ADJ_TRANS_DESCR.billing_category = 2
+AND    ADJ_TRANS_DESCR.is_viewable = 1
+AND    (ADJ.orig_bill_ref_no = 0 OR ADJ.orig_bill_ref_no IN
+            (SELECT BILL_REF_NO
+            FROM  BILL_INVOICE
+            WHERE           1=1
+            AND    backout_status NOT IN (1001, 1002)))
+AND    (ADJ.BILL_REF_NO = 0 OR ADJ.BILL_REF_NO IN
+            (SELECT         BILL_REF_NO
+            FROM BILL_INVOICE
+            WHERE           1=1
+            AND backout_status NOT IN (1001, 1002)))
+UNION ALL
+
+SELECT DISTINCT
+                 BMF.account_no,
+              BMF.orig_bill_ref_no INVOICE,
+            BMF.trans_date TRANS_DATE,
+            ((BMF.trans_amount*BMF_TRANS_DESCR.trans_sign)* -1) /100 AS AMOUNT,
+            DESCRIPTIONS.description_text
+FROM  BMF, BMF_TRANS_DESCR, DESCRIPTIONS
+WHERE  1=1
+and    BMF.trans_date &gt;= ADD_MONTHS(SYSDATE, -12)
+AND    DESCRIPTIONS.language_code = 1
+AND    BMF.bmf_trans_type = BMF_TRANS_DESCR.bmf_trans_type
+AND    DESCRIPTIONS.description_code = BMF_TRANS_DESCR.description_code
+AND    BMF.action_code IN ('APP','REV')
+AND    ((BMF_TRANS_DESCR.bmf_trans_type =16 AND BMF_TRANS_DESCR.bmf_trans_category = 9)
+OR       BMF_TRANS_DESCR.bmf_trans_category NOT IN (6,9,11) )
+AND    (BMF.BILL_REF_NO = 0 OR BMF.BILL_REF_NO IN
+            (SELECT         BILL_REF_NO
+            FROM BILL_INVOICE
+            WHERE 1=1
+            AND backout_status NOT IN (1001, 1002)))
+ORDER BY 3</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Transaction\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{DAB04308-5D20-4556-83CF-B163485389F1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FX4DB.REPORTINGSERVICES]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INVOICE]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      name="INVOICE_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TRANS_DATE]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION_TEXT]"
+                      length="240"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INVOICE]"
+                      dataType="numeric"
+                      name="INVOICE"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TRANS_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANS_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AMOUNT]"
+                      dataType="r8"
+                      name="AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION_TEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="DESCRIPTION_TEXT" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INVOICE]"
+                      dataType="numeric"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INVOICE]"
+                      name="INVOICE"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TRANS_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TRANS_DATE]"
+                      name="TRANS_DATE" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AMOUNT]"
+                      dataType="r8"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AMOUNT]"
+                      name="AMOUNT" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION_TEXT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION_TEXT]"
+                      name="DESCRIPTION_TEXT" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extract Transaction\raw B2B_TRANSACTION"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="raw B2B_TRANSACTION"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[raw].[B2B_TRANSACTION]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extract Transaction\raw B2B_TRANSACTION.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NO]"
+                      cachedDataType="numeric"
+                      cachedName="ACCOUNT_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[INVOICE_NO]"
+                      cachedDataType="numeric"
+                      cachedName="INVOICE_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_NO]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[INVOICE_NO]" />
+                    <inputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRANSACTION_DATE"
+                      externalMetadataColumnId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]" />
+                    <inputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_AMOUNT]"
+                      cachedDataType="r8"
+                      cachedName="TRANSACTION_AMOUNT"
+                      externalMetadataColumnId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]" />
+                    <inputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].Columns[TRANSACTION_LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="TRANSACTION_LOCATION"
+                      externalMetadataColumnId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      lineageId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_NO]"
+                      dataType="numeric"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extract Transaction\raw B2B_TRANSACTION.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extract Transaction\raw B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extract Transaction\raw B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extract Transaction\raw B2B_TRANSACTION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extract Transaction.Paths[OLE DB Source Output]"
+              endId="Package\Extract Transaction\raw B2B_TRANSACTION.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Extract Transaction\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\staging B2B_TRANSACTION_00"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A3D2E91-4EAB-4874-92CD-BC327629CF29}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="staging B2B_TRANSACTION_00"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="raw B2B_TRANSACTION"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select T.*
+from	curated.B2B_ACCOUNT A,
+		[raw].[B2B_TRANSACTION] T
+WHERE	1=1
+AND		A.ACCOUNT_ID = T.ACCOUNT_NO</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      name="INVOICE_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      length="240"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_NO]"
+                      dataType="numeric"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[INVOICE_NO]"
+                      dataType="numeric"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[INVOICE_NO]"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging B2B_TRANSACTION_00"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_TRANSACTION_00]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NO]"
+                      cachedDataType="numeric"
+                      cachedName="ACCOUNT_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].Columns[INVOICE_NO]"
+                      cachedDataType="numeric"
+                      cachedName="INVOICE_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[INVOICE_NO]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].Columns[TRANSACTION_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRANSACTION_DATE"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].Columns[TRANSACTION_AMOUNT]"
+                      cachedDataType="r8"
+                      cachedName="TRANSACTION_AMOUNT"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].Columns[TRANSACTION_LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="TRANSACTION_LOCATION"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      lineageId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_NO]"
+                      dataType="numeric"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\staging B2B_TRANSACTION_00.Paths[OLE DB Source Output]"
+              endId="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\staging B2B_TRANSACTION_05"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F29EF2E3-4AD7-4649-B4C1-E11DBDCA7F90}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="staging B2B_TRANSACTION_05"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="staging B2B_TRANSACTION_00"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+from	staging.B2B_TRANSACTION_00
+where 1=1</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{85C47D43-6062-465D-BD87-61437FB6EA4A};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_NO]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[INVOICE_NO]"
+                      name="INVOICE_NO"
+                      precision="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      length="240"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[INVOICE_NO]"
+                      dataType="numeric"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      dataType="numeric"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NO]"
+                      name="ACCOUNT_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[INVOICE_NO]"
+                      dataType="numeric"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[INVOICE_NO]"
+                      name="INVOICE_NO"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_DATE]"
+                      name="TRANSACTION_DATE" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_AMOUNT]"
+                      name="TRANSACTION_AMOUNT" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[TRANSACTION_LOCATION]"
+                      name="TRANSACTION_LOCATION" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging B2B_TRANSACTION_05"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[B2B_TRANSACTION_05]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Connections[OleDbConnection]"
+                  connectionManagerID="{3FAEF594-14DF-44FE-8577-79761F1D42A3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[setw2k12itadev.C3sixty]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].Columns[TRANSACTION_DATE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TRANSACTION_DATE"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_DATE]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].Columns[TRANSACTION_AMOUNT]"
+                      cachedDataType="r8"
+                      cachedName="TRANSACTION_AMOUNT"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_AMOUNT]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].Columns[TRANSACTION_LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="240"
+                      cachedName="TRANSACTION_LOCATION"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[TRANSACTION_LOCATION]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NO]"
+                      cachedDataType="numeric"
+                      cachedName="ACCOUNT_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[ACCOUNT_NO]" />
+                    <inputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].Columns[INVOICE_NO]"
+                      cachedDataType="numeric"
+                      cachedName="INVOICE_NO"
+                      cachedPrecision="10"
+                      externalMetadataColumnId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_ID]"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output].Columns[INVOICE_NO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_ID]"
+                      dataType="numeric"
+                      name="ACCOUNT_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[INVOICE_ID]"
+                      dataType="numeric"
+                      name="INVOICE_ID"
+                      precision="10" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_DATE]"
+                      dataType="dbTimeStamp"
+                      name="TRANSACTION_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_AMOUNT]"
+                      dataType="r8"
+                      name="TRANSACTION_AMOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input].ExternalColumns[TRANSACTION_LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="240"
+                      name="TRANSACTION_LOCATION" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\staging B2B_TRANSACTION_05.Paths[OLE DB Source Output]"
+              endId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9D8A8EFD-C61B-4FAA-A5AF-F77B61217E97}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3FAEF594-14DF-44FE-8577-79761F1D42A3}"
+          SQLTask:SqlStatementSource="truncate table raw.B2B_TRANSACTION&#xA;&#xA;truncate table staging.B2B_TRANSACTION_00&#xA;truncate table staging.B2B_TRANSACTION_05&#xA;&#xA;truncate table curated.B2B_TRANSACTION&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3407ADDF-8B06-46A5-BD12-43663B51764A}"
+      DTS:From="Package\Truncate Staging Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Extract Transaction" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2B6B73E6-455B-49AF-9847-D860ABEDE510}"
+      DTS:From="Package\Extract Transaction"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\staging B2B_TRANSACTION_00" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A4D3A3EB-7FA4-4B60-A0C3-1F2F0CE3F228}"
+      DTS:From="Package\staging B2B_TRANSACTION_00"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\staging B2B_TRANSACTION_05" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{2449068C-A119-45FA-AC74-489BDAB8B5B3}"
+      DTS:From="Package\staging B2B_TRANSACTION_05"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\curated B2B_INVOICE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\curated B2B_INVOICE"
+          TopLeft="711,523" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Extract Transaction"
+          TopLeft="75,171" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\staging B2B_TRANSACTION_00"
+          TopLeft="349,355" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\staging B2B_TRANSACTION_05"
+          TopLeft="373,527" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Truncate Staging Tables"
+          TopLeft="60,60" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="160.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="162,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="307.5,142"
+              Start="0,0"
+              End="307.5,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67"
+                    Point2="0,71"
+                    Point3="4,71" />
+                  <mssgle:LineSegment
+                    End="303.5,71" />
+                  <mssgle:CubicBezierSegment
+                    Point1="303.5,71"
+                    Point2="307.5,71"
+                    Point3="307.5,75" />
+                  <mssgle:LineSegment
+                    End="307.5,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="469.5,397">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24,130"
+              Start="0,0"
+              End="24,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="4,65" />
+                  <mssgle:LineSegment
+                    End="20,65" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20,65"
+                    Point2="24,65"
+                    Point3="24,69" />
+                  <mssgle:LineSegment
+                    End="24,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="614,546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97,0"
+              Start="0,0"
+              End="89.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\curated B2B_INVOICE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="224,42"
+          Id="Package\curated B2B_INVOICE\curated B2B_TRANSACTION"
+          TopLeft="487,342" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05"
+          TopLeft="400,141" />
+        <EdgeLayout
+          Id="Package\curated B2B_INVOICE.Paths[OLE DB Source Output]"
+          TopLeft="520.5,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.5,159"
+              Start="0,0"
+              End="78.5,151.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,75.5"
+                    Point2="0,79.5"
+                    Point3="4,79.5" />
+                  <mssgle:LineSegment
+                    End="74.5,79.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.5,79.5"
+                    Point2="78.5,79.5"
+                    Point3="78.5,83.5" />
+                  <mssgle:LineSegment
+                    End="78.5,151.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\curated B2B_INVOICE\curated B2B_TRANSACTION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\curated B2B_INVOICE\staging B2B_TRANSACTION_05">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extract Transaction">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Extract Transaction\raw B2B_TRANSACTION"
+          TopLeft="426,472" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Extract Transaction\OLE DB Source"
+          TopLeft="182,126" />
+        <EdgeLayout
+          Id="Package\Extract Transaction.Paths[OLE DB Source Output]"
+          TopLeft="260.5,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="268,304"
+              Start="0,0"
+              End="268,296.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,148" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,148"
+                    Point2="0,152"
+                    Point3="4,152" />
+                  <mssgle:LineSegment
+                    End="264,152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="264,152"
+                    Point2="268,152"
+                    Point3="268,156" />
+                  <mssgle:LineSegment
+                    End="268,296.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Transaction\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Transaction\raw B2B_TRANSACTION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\staging B2B_TRANSACTION_00">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION"
+          TopLeft="303,97" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00"
+          TopLeft="393,318" />
+        <EdgeLayout
+          Id="Package\staging B2B_TRANSACTION_00.Paths[OLE DB Source Output]"
+          TopLeft="405.5,139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,179"
+              Start="0,0"
+              End="108,171.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,85.5"
+                    Point2="0,89.5"
+                    Point3="4,89.5" />
+                  <mssgle:LineSegment
+                    End="104,89.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,89.5"
+                    Point2="108,89.5"
+                    Point3="108,93.5" />
+                  <mssgle:LineSegment
+                    End="108,171.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging B2B_TRANSACTION_00\raw B2B_TRANSACTION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging B2B_TRANSACTION_00\staging B2B_TRANSACTION_00">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\staging B2B_TRANSACTION_05">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="241,42"
+          Id="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00"
+          TopLeft="439,84" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05"
+          TopLeft="597,369" />
+        <EdgeLayout
+          Id="Package\staging B2B_TRANSACTION_05.Paths[OLE DB Source Output]"
+          TopLeft="559.5,126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158,243"
+              Start="0,0"
+              End="158,235.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,117.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,117.5"
+                    Point2="0,121.5"
+                    Point3="4,121.5" />
+                  <mssgle:LineSegment
+                    End="154,121.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154,121.5"
+                    Point2="158,121.5"
+                    Point3="158,125.5" />
+                  <mssgle:LineSegment
+                    End="158,235.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_00">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging B2B_TRANSACTION_05\staging B2B_TRANSACTION_05">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

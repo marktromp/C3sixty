@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AG-ITA-MTROMP"
   DTS:CreatorName="SETARNV\mark.tromp"
-  DTS:DTSID="{434FF718-52D5-488B-8F9D-0E4734283487}"
+  DTS:DTSID="{68C39835-F293-4C21-83F0-604F8DC0E6F9}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="B2X 03 Invoice"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{ED26A4DA-A053-482D-BDAC-DD6D497C8436}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{07167026-9C07-4E3A-850F-76A51994A73E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -24,6 +24,15 @@
       DTS:ObjectName="varInvoiceMonths">
       <DTS:VariableValue
         DTS:DataType="3">9</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E84E1F6A-2E26-467C-8B94-20BA3E5F97AC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="varTransactionMonths">
+      <DTS:VariableValue
+        DTS:DataType="3">12</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1520,6 +1529,40 @@ where 1=1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="173,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="280,142"
+              Start="0,0"
+              End="280,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67"
+                    Point2="0,71"
+                    Point3="4,71" />
+                  <mssgle:LineSegment
+                    End="276,71" />
+                  <mssgle:CubicBezierSegment
+                    Point1="276,71"
+                    Point2="280,71"
+                    Point3="280,75" />
+                  <mssgle:LineSegment
+                    End="280,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="453,397">
           <EdgeLayout.Curve>
@@ -1567,40 +1610,6 @@ where 1=1</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="375.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="173,213">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="280,142"
-              Start="0,0"
-              End="280,134.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,67"
-                    Point2="0,71"
-                    Point3="4,71" />
-                  <mssgle:LineSegment
-                    End="276,71" />
-                  <mssgle:CubicBezierSegment
-                    Point1="276,71"
-                    Point2="280,71"
-                    Point3="280,75" />
-                  <mssgle:LineSegment
-                    End="280,134.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

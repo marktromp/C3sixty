@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="AG-ITA-MTROMP1"
   DTS:CreatorName="SETARNV\mark.tromp"
-  DTS:DTSID="{189FB4FD-5EA3-498D-A94F-38DB41B6140D}"
+  DTS:DTSID="{6DD7438D-0301-4023-8260-9C6516AB8685}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="B2B 01 Profile"
+  DTS:ObjectName="B2X 01 Account"
   DTS:PackageType="5"
-  DTS:VersionBuild="262"
-  DTS:VersionGUID="{CEAC7D54-2D2B-4259-A267-93E3D40EC8A2}">
+  DTS:VersionBuild="264"
+  DTS:VersionGUID="{293E8031-427C-470C-8F35-8293F0F92189}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -6755,13 +6755,13 @@ WHERE        (1 = 1)</property>
           Id="Package\Initialise"
           TopLeft="28,33" />
         <NodeLayout
-          Size="179,42"
-          Id="Package\staging Account B2B\B2B_ACCOUNT_00"
-          TopLeft="44,120" />
-        <NodeLayout
           Size="158,42"
           Id="Package\staging Account B2B\B2B Account 05"
           TopLeft="77,311" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\staging Account B2B\B2B_ACCOUNT_00"
+          TopLeft="44,120" />
         <NodeLayout
           Size="202,42"
           Id="Package\staging Account B2B\remove Commans in NAW"
@@ -7274,7 +7274,7 @@ WHERE        (1 = 1)</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Initialise\Extract Kenan B2B\raw B2B_ACCOUNT">
+    design-time-name="Package\Initialise\Extract Kenan B2B\CMF_B2B">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7287,7 +7287,7 @@ WHERE        (1 = 1)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Initialise\Extract Kenan B2B\CMF_B2B">
+    design-time-name="Package\Initialise\Extract Kenan B2B\raw B2B_ACCOUNT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7444,77 +7444,6 @@ WHERE        (1 = 1)</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="179,42"
-          Id="Package\staging Account B2B\B2B_ACCOUNT_00\ACCOUNT_B2B_00"
-          TopLeft="375,319" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\staging Account B2B\B2B_ACCOUNT_00\raw Account B2B"
-          TopLeft="229,96" />
-        <EdgeLayout
-          Id="Package\staging Account B2B\B2B_ACCOUNT_00.Paths[OLE DB Source Output]"
-          TopLeft="310.5,138">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="154,181"
-              Start="0,0"
-              End="154,173.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,86.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,86.5"
-                    Point2="0,90.5"
-                    Point3="4,90.5" />
-                  <mssgle:LineSegment
-                    End="150,90.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="150,90.5"
-                    Point2="154,90.5"
-                    Point3="154,94.5" />
-                  <mssgle:LineSegment
-                    End="154,173.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00\ACCOUNT_B2B_00">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00\raw Account B2B">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\staging Account B2B\B2B Account 05">
     <LayoutInfo>
       <GraphLayout
@@ -7579,6 +7508,77 @@ WHERE        (1 = 1)</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\staging Account B2B\B2B Account 05\Only New B2B Accounts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\staging Account B2B\B2B_ACCOUNT_00\ACCOUNT_B2B_00"
+          TopLeft="375,319" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\staging Account B2B\B2B_ACCOUNT_00\raw Account B2B"
+          TopLeft="229,96" />
+        <EdgeLayout
+          Id="Package\staging Account B2B\B2B_ACCOUNT_00.Paths[OLE DB Source Output]"
+          TopLeft="310.5,138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154,181"
+              Start="0,0"
+              End="154,173.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,86.5"
+                    Point2="0,90.5"
+                    Point3="4,90.5" />
+                  <mssgle:LineSegment
+                    End="150,90.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150,90.5"
+                    Point2="154,90.5"
+                    Point3="154,94.5" />
+                  <mssgle:LineSegment
+                    End="154,173.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00\ACCOUNT_B2B_00">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\staging Account B2B\B2B_ACCOUNT_00\raw Account B2B">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
